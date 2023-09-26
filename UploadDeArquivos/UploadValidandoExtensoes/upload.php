@@ -1,19 +1,19 @@
 <?php
 if(isset($_POST['enviar-formulario'])):
-   $formatos= array("PNG", "jpeg", "jpg", "gif");
-   $extensao = pathinfo($_FILES['arquivo']['name'], PATHINFO_EXTENSION);
-   
+   $formatos= array("png", "jpeg", "jpg", "gif");
+   $extensao = strtolower(pathinfo($_FILES['arquivo']['name'], PATHINFO_EXTENSION));
+
   
 
 if(in_array($extensao, $formatos)):
-    $pasta = "./arquivos/";
+    $pasta = "./arquivo/";
     $temporario = $_FILES['arquivo']['tmp_name'];
     $novoNome = uniqid() . ".$extensao";
   
    
 
 
-if(move_uploaded_file($temporario, $pasta.$temporario)):
+if(move_uploaded_file($temporario, $pasta.$novoNome)):
     $mensagem = "upload feito com sucesso";
     
    
