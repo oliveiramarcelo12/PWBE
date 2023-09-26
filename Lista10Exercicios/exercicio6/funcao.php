@@ -20,4 +20,4 @@ if (isset($_POST['lado1']) && isset($_POST['lado2']) && isset($_POST['lado3'])) 
         echo "Os valores NÃO representam os lados de um triângulo.";
     }
 }
-?>
+?>     
